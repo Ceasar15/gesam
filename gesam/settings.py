@@ -85,8 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'CONN_MAX_AGE': 500
-
+        'CONN_MAX_AGE': 500,
     }
 }
 
@@ -137,10 +136,9 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+# Database Settings
 DATABASE_URL = os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
 
