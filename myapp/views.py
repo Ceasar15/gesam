@@ -1,17 +1,8 @@
-# Create your views here.
-
 from django.shortcuts import render
-from django.contrib import messages
-from django.template import RequestContext
 from django.http import HttpRequest, HttpResponseRedirect
 from .models import Contact
 
 # Create your views here.
-
-
-def events(request):
-    assert isinstance(request, HttpRequest)
-    return render(render, 'event.html')
 
 
 def index(request):
@@ -29,9 +20,8 @@ def contact(request):
             contact.phone = request.POST.get('phone')
             contact.message = request.POST.get('message')
             contact.save()
-            print(contact)
 
-        return render(request, "contact.html")
+        return render(request, 'contact.html')
     else:
         return render(request, "contact.html")
 
