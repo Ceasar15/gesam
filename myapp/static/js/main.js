@@ -41,16 +41,26 @@ jQuery(document).ready(function($) {
       });
 
     }, 1000);
+	//
+	// 	$(document).ready(function () {
+    // $('.site-menu li a').click(function(e) {
+	//
+    //     $('.site-menu li.active').removeClass('active');
+    //     var $parent = $(this).parent();
+    //     $parent.addClass('active');
+    //     e.preventDefault();
+    // });
+	// });
 
 		$('body').on('click', '.arrow-collapse', function(e) {
-      var $this = $(this);
-      if ( $this.closest('li').find('.collapse').hasClass('show') ) {
-        $this.removeClass('active');
-      } else {
-        $this.addClass('active');
+			let $this = $(this);
+			if ( $this.closest('li').find('.collapse').hasClass('show') ) {
+        	$this.removeClass('active');
+      } 	else {
+        	$this.addClass('active');
       }
-      e.preventDefault();  
-      
+      		e.preventDefault();
+
     });
 
 		$(window).resize(function() {

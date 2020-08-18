@@ -21,6 +21,7 @@ import dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
+# load environment variables from .env
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'gesam.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {}
-DATABASES['default']: dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -126,15 +127,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath('/home/ceasar/Desktop/Dev/gesam/myapp/static'))
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Database Settings
 #DATABASE_URL = os.environ["pnigvwhtbjmdqf:8ee2630425d7b7f8ccf33262b33b551b785dd55b75be8dfdf882fe8f5b930f05@ec2-18-210-180-94.compute-1.amazonaws.com:5432/d58glacnm5q31m"]
@@ -142,7 +141,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-# This should already be in your settings.py
+# Activate Django Heroku
 
 django_heroku.settings(locals())
 
