@@ -19,7 +19,9 @@ import dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+#BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # load environment variables from .env
 dotenv_file = os.path.join(BASE_DIR, ".env")
@@ -33,7 +35,8 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'u_$jy6zfbkwr-qca0ic%17-v6@wp+47695_^s885#tfkqjm^v^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
 
 ALLOWED_HOSTS = ['gesam.herokuapp.com',
                  '127.0.0.1',
@@ -127,19 +130,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'myapp/static'),
+)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Database Settings
-#DATABASE_URL = os.environ["pnigvwhtbjmdqf:8ee2630425d7b7f8ccf33262b33b551b785dd55b75be8dfdf882fe8f5b930f05@ec2-18-210-180-94.compute-1.amazonaws.com:5432/d58glacnm5q31m"]
-#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# DATABASE_URL = os.environ["DATABASE_URL"]
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Activate Django Heroku
 

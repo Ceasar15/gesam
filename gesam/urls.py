@@ -32,5 +32,4 @@ urlpatterns = [
     url(r'^contact', myapp.views.contact, name='contact'),
     url(r'^beliefs', myapp.views.beliefs, name='beliefs'),
     url(r'^sermons', myapp.views.sermons, name='sermons')
-] + static(settings.STATIC_URL, document_root =settings.STATIC_ROOT)
-
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
