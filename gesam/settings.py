@@ -33,7 +33,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'u_$jy6zfbkwr-qca0ic%17-v6@wp+47695_^s885#tfkqjm^v^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['gesam.herokuapp.com',
                  '127.0.0.1',
