@@ -33,3 +33,6 @@ urlpatterns = [
     url(r'^beliefs', myapp.views.beliefs, name='beliefs'),
     url(r'^sermons', myapp.views.sermons, name='sermons')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
