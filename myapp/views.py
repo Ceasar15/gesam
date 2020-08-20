@@ -33,3 +33,8 @@ def beliefs(request):
 def sermons(request):
     assert isinstance(request, HttpRequest)
     return render(request, 'sermons.html')
+
+
+def donations(request):
+    assert isinstance(request, HttpRequest)
+    return render(request, 'donations.html')

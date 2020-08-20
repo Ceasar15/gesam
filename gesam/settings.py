@@ -68,6 +68,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'gesam.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -155,3 +156,10 @@ django_heroku.settings(locals())
 
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
+
+
+# paystack settings
+
+PAYSTACK_PUBLIC_KEY='pk_test_0fd510a4184e96f32db112ae882c81a1621d1251',
+PAYSTACK_SECRET_KEY='sk_test_7007502ba3c626ec2894595d54c89c9c2e9b2496'
+

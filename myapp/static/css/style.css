@@ -140,7 +140,7 @@ a {
   .site-footer .footer-heading {
     font-size: 20px; }
   .site-footer a {
-    color: rgba(255, 255, 255, 0.3); }
+    color: rgba(255, 255, 255, 0.5); }
     .site-footer a:hover {
       color: #fff; }
   .site-footer ul li {
@@ -494,8 +494,9 @@ a {
       top: 0;
       background: rgba(0, 0, 0, 0.4); }
   .site-blocks-cover, .site-blocks-cover .row {
-    min-height: 600px;
-    height: calc(100vh); }
+     width: auto;
+     min-height: 600px;
+     height: calc(40vh);}
   .site-blocks-cover.inner-page, .site-blocks-cover.inner-page .row {
     min-height: 600px;
     height: calc(40vh); }
