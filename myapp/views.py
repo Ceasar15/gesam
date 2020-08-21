@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from .models import Contact
+from django.conf import settings
+from pypaystack import Transaction
 
 # Create your views here.
 
@@ -38,3 +40,13 @@ def sermons(request):
 def donations(request):
     assert isinstance(request, HttpRequest)
     return render(request, 'donations.html')
+
+
+def verify(request, reference):
+    transaction = Transaction(settings.PAYSTACK_SECRET_KEY)
+    response = transaction.verify(reference)
+    if response[3]['status'] == 'success':
+        return render(request, 'donations.html')
+    else:
+        return HttpResponse('failed')
+
