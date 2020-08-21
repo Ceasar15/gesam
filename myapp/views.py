@@ -3,6 +3,7 @@ from django.http import HttpRequest, HttpResponse
 from .models import Contact
 from django.conf import settings
 from pypaystack import Transaction
+import requests
 
 # Create your views here.
 
