@@ -135,12 +135,12 @@ a {
 
 .site-footer {
   padding: 4em 0;
-  background: #00007f;
+  background: #240fa7;
   color: rgba(255, 255, 255, 0.5); }
   .site-footer .footer-heading {
-    font-size: 20px; }
+    font-size: 21px; }
   .site-footer a {
-    color: rgba(255, 255, 255, 0.5); }
+    color: #c3c3d0;}
     .site-footer a:hover {
       color: #fff; }
   .site-footer ul li {
@@ -1295,12 +1295,13 @@ a {
   font-size: 20px; }
 
 .quick-contact-info {
-  background: #0a32ee;
-  color: rgba(255, 255, 255, 0.5); }
+  background: #1936e5;
+  color: rgb(255, 255, 255);
+  font-size: 16px;}
   .quick-contact-info h2 {
-    color: #fff;
+    color: #ffffff;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: .2em; }
 
 .latest-sermons h2 {
@@ -1402,3 +1403,7 @@ a {
 .unit-8 .accordion-item .body-text {
   padding: 5px 0;
   padding-left: 30px; }
+
+
+/*#240fa7*/
+/*#1936e5*/
