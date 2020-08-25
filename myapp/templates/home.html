@@ -3,9 +3,18 @@
 {% load static %}
 
 {% block content%}
-    <div style="height: 113px;"></div>
+    <div style="height: 110px;"></div>
     <div class="slide-one-item home-slider owl-carousel">
-      <div class="site-blocks-cover" style="background-image: url({% static 'images/presidency.jpg' %}); width: 100%; height: 100%" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover" data-aos="fade" data-stellar-background-ratio="0.5">
+          <img src="{% static 'images/presidency.jpg' %}">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 text-center" data-aos="fade"></div>
+                </div>
+            </div>
+      </div>
+          <div class="site-blocks-cover" data-aos="fade" data-stellar-background-ratio="0.5">
+            <img src="{% static 'images/hilase.jpg' %}">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
@@ -13,7 +22,8 @@
           </div>
         </div>
       </div>
-        <div class="site-blocks-cover" style="background-image: url({% static 'images/boysboys.jpg' %}); width: 100%; height: 100%" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="site-blocks-cover" data-aos="fade" data-stellar-background-ratio="0.5">
+            <img src="{% static 'images/alum.jpg' %}">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
@@ -21,7 +31,8 @@
           </div>
         </div>
       </div>
-      <div class="site-blocks-cover" style="background-image: url({% static 'images/secs.jpg' %})" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover" data-aos="fade" data-stellar-background-ratio="0.5">
+          <img src="{% static 'images/secs.jpg' %}">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
@@ -29,8 +40,8 @@
             </div>
           </div>
         </div>
-      </div> 
-    </div>
+      </div>
+</div>
 
     <div class="site-section bg-light">
       <div class="container">

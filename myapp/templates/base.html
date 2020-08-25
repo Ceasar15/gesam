@@ -54,7 +54,6 @@ vertical-align:middle;}
 
 
     <div class="site-navbar-wrap js-site-navbar bg-white">
-
       <div class="container">
         <div class="site-navbar bg-light">
           <div class="py-1">
@@ -82,7 +81,7 @@ vertical-align:middle;}
                           <li><a href="{% url 'beliefs' %}">Belief 3</a></li>
                           <li class="has-children">
                             <a href="{% url 'beliefs' %}">Campus</a>
-                            <ul class="dropdown">
+                            <ul class="dropdown arrow-top">
                               <li><a href="{% url 'beliefs' %}">Kumasi</a></li>
                               <li><a href="{% url 'beliefs' %}">Ho</a></li>
                               <li><a href="{% url 'beliefs' %}">Takoradi</a></li>
@@ -92,7 +91,15 @@ vertical-align:middle;}
                         </ul>
                       </li>
                       <li><a href="{% url 'contact' %}">Contact</a></li>
-                        <li><a href="{% url 'donations' %}">Donations</a></li>
+                        <li class="has-children">
+                            <a href="{% url 'donations' %}">Donate </a>
+                            <ul class="dropdown arrow-top">
+                              <li><a href="{% url 'donations' %}">SICE</a></li>
+                              <li><a href="{% url 'donations' %}">Royal Praise Funds</a></li>
+                              <li><a href="{% url 'donations' %}">Tithe</a></li>
+                              <li><a href="{% url 'donations' %}">Offering</a></li>
+                            </ul>
+                        </li>
                     </ul>
                   </div>
                 </nav>
@@ -150,11 +157,11 @@ vertical-align:middle;}
                 <div class="col-md-6">
                   <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
                     <ul class="list-unstyled">
-                      <li><a href="#">About</a></li>
+                      <li><a href="{% url 'home' %}">About</a></li>
                       <li><a href="{% url 'contact' %}">Contacts</a></li>
-                      <li><a href="#">SICE</a></li>
+                      <li><a href="{% url 'donations' %}">SICE</a></li>
                       <li><a href="{% url 'donations' %}">Donations and Funding</a></li>
-                      <li><a href="#">Alumni</a></li>
+                      <li><a href="{% url 'people' %}">People</a></li>
                    
                     </ul>
                 </div>

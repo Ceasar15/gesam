@@ -3,7 +3,6 @@ from django.http import HttpRequest, HttpResponse
 from .models import Contact
 from django.conf import settings
 from pypaystack import Transaction
-import requests
 
 # Create your views here.
 
@@ -50,4 +49,3 @@ def verify(request, reference):
         return render(request, 'donations.html')
     else:
         return HttpResponse('failed')
-

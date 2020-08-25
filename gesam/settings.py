@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'info',
 ]
 
 MIDDLEWARE = [
@@ -133,11 +134,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'myapp/static/media')
 MEDIA_URL = '/media/'
 
-# Database Settings
-# DATABASE_URL = os.environ["DATABASE_URL"]
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Activate Django Heroku
 
