@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} GESAM-People {% endblock %}
 {% load static %}
-
 {% block content %}
-
     <div style="height: 120px;"></div>
     <div class="slide-one-item home-slider owl-carousel">
       <div class="site-blocks-cover" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -61,7 +59,6 @@
                 </div>
                   <div class="row form-group">
                     <div class="col-md-12 mb-3 mb-md-0">
-{#                        <label class="font-weight-bold" for="gender">Gender</label>#}
                         <label for="male">Male</label>
                         <input type="radio" id="male" name="gender" value="male" checked>
                         <label for="male">Female</label>
@@ -101,18 +98,4 @@
         </div>
       </div>
 </div>
-{#    <script>#}
-{#    var datefield = document.createElement("input")#}
-{#    datefield.setAttribute("type", "date")#}
-{##}
-{#    if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker#}
-{#        document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')#}
-{#        document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"><\/script>\n')#}
-{#    }#}
-{#    if (datefield.type != "date"){ //if browser doesn't support input type="date", initialize date picker widget:#}
-{#        $(document).ready(function() {#}
-{#            $("dd,mm,yyyy").datepicker();#}
-{#        });#}
-{#    }#}
-{#    </script>#}
 {% endblock %}
