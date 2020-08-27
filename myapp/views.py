@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-from .models import Contact
+from django.template import RequestContext
+
+from .models import Contact, People
 from django.conf import settings
 from pypaystack import Transaction
 
@@ -10,6 +12,25 @@ from pypaystack import Transaction
 def index(request):
     assert isinstance(request, HttpRequest)
     return render(request, 'home.html')
+
+
+def people(request):
+    if request.method == "POST":
+        print(request.POST)
+        if request.POST.get('fullname') and request.POST.get('phone') and request.POST.get('hall') and request.POST.get("program"):
+            people = People()
+            people.fullname = request.POST.get('fullname')
+            people.phone = request.POST.get('phone')
+            people.hall = request.POST.get('hall')
+            people.roomNumber = request.POST.get('roomNumber')
+            people.program = request.POST.get("program")
+            people.birthday = request.POST.get("birthday")
+            people.gender = request.POST.get("gender")
+            people.level = request.POST.get("level")
+            people.save()
+            return render(request, "people.html")
+    else:
+        return render(request, "people.html")
 
 
 def contact(request):
