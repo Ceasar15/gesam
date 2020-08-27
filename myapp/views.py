@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-from django.template import RequestContext
 
+from django.contrib import messages
 from .models import Contact, People
 from django.conf import settings
 from pypaystack import Transaction
@@ -28,6 +28,7 @@ def people(request):
             people.gender = request.POST.get("gender")
             people.level = request.POST.get("level")
             people.save()
+            messages.success(request, 'Submitted Successfully')
             return render(request, "people.html")
     else:
         return render(request, "people.html")
